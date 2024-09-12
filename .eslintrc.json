@@ -1,3 +1,28 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals", // Расширяет правила Next.js и Core Web Vitals
+    "eslint:recommended", // Рекомендуемые правила ESLint
+    "plugin:react/recommended", // Правила для React
+    "plugin:@typescript-eslint/recommended" // Если используете TypeScript
+  ],
+  "plugins": [
+    "react", // Добавляем плагин для React
+    "@typescript-eslint" // Добавляем плагин для TypeScript (если используете TypeScript)
+  ],
+  "rules": {
+    // Настройки для вашего проекта
+    "react/react-in-jsx-scope": "off", // Отключаем необходимость импорта React в каждом файле (Next.js не требует этого)
+    "react/prop-types": "off", // Отключаем проверку типов пропсов (если используете TypeScript)
+    "no-unused-vars": "warn", // Предупреждать об неиспользуемых переменных
+    "no-console": "warn", // Предупреждать о использовании console.log
+    "@typescript-eslint/no-unused-vars": "warn", // Отключаем предупреждения о неиспользуемых переменных для TypeScript
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Не требовать явных типов для функций в TypeScript
+    "semi": ["error", "always"], // Требовать точки с запятой в конце каждой строки
+    "quotes": ["error", "single"] // Использовать одинарные кавычки для строк
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Автоматическое определение версии React
+    }
+  }
 }
